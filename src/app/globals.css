@@ -113,15 +113,6 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
 .grey {
   /* Override the CSS variables for grey theme */
   --background: beige;
@@ -142,7 +133,6 @@
   --border: #cccccc;
   --input: #cccccc;
   --ring: #99cccc;
-
   --sidebar: beige;
   --sidebar-foreground: aqua;
   --sidebar-primary: aqua;
@@ -151,4 +141,13 @@
   --sidebar-accent-foreground: beige;
   --sidebar-border: #cccccc;
   --sidebar-ring: #99cccc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
