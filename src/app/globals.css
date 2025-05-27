@@ -121,17 +121,7 @@
     @apply bg-background text-foreground;
   }
 }
-/* Default (light mode) */
-body {
-  background-color: white;
-  color: black;
-}
 
-/* Dark mode */
-.dark body {
-  background-color: #121212;
-  color: white;
-}
 .grey {
   /* Override the CSS variables for grey theme */
   --background: beige;
@@ -161,10 +151,4 @@ body {
   --sidebar-accent-foreground: beige;
   --sidebar-border: #cccccc;
   --sidebar-ring: #99cccc;
-}
-
-/* Also add fallback for body color */
-.grey body {
-  background-color: var(--background, beige);
-  color: var(--foreground, aqua);
 }

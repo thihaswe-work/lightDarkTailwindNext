@@ -13,19 +13,8 @@ const ThemeContext = createContext<{
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
-
-  // On mount: check localStorage
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as Theme | null;
-    if (
-      storedTheme === "light" ||
-      storedTheme === "dark" ||
-      storedTheme === "grey"
-    ) {
-      setThemeState(storedTheme);
-    }
-  }, []);
+  const storedTheme = localStorage.getItem("theme") as Theme;
+  const [theme, setThemeState] = useState<Theme>(storedTheme);
 
   // Apply class and save to localStorage
   useEffect(() => {

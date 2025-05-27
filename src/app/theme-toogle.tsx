@@ -10,13 +10,26 @@ export default function ThemeToggle() {
       <p>
         Current theme: <strong>{theme}</strong>
       </p>
-      <button onClick={() => setTheme("light")} style={{ marginRight: "1rem" }}>
+      <button
+        className="text-green-500 text-2xl font-semibold"
+        onClick={() => setTheme("light")}
+        style={{ marginRight: "1rem" }}
+      >
         Light Mode
       </button>
-      <button onClick={() => setTheme("dark")} style={{ marginRight: "1rem" }}>
+      <button
+        className="text-green-500 text-2xl font-semibold"
+        onClick={() => setTheme("dark")}
+        style={{ marginRight: "1rem" }}
+      >
         Dark Mode
       </button>
-      <button onClick={() => setTheme("grey")}>Grey Mode</button>
+      <button
+        className="text-green-500 text-2xl font-semibold"
+        onClick={() => setTheme("grey")}
+      >
+        Grey Mode
+      </button>
     </div>
   );
 }
