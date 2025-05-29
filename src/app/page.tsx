@@ -1,8 +1,11 @@
 import { ThreeDCardDemo } from "@/features/3dCard";
 import { FloatingDockDemo } from "@/features/floatingDeck";
 import { ThreeDMarqueeDemo } from "@/features/marquee";
-import ThemeToggle from "./theme-toogle";
-import UserTable from "./user-table";
+import ThemeToggle from "@/components/layout/theme-toogle";
+import UserTable from "@/features/user-table";
+
+import { MovingBorderDemo } from "@/features/borderButton";
+import { WorldMapDemo } from "@/features/worldMap";
 
 export default async function Home() {
   // const res = await fetch("https://dummyjson.com/users", { cache: "no-store" });
@@ -14,7 +17,10 @@ export default async function Home() {
       <ThreeDCardDemo />
       <FloatingDockDemo />
       <ThreeDMarqueeDemo />
+      <MovingBorderDemo />
+      <WorldMapDemo />
       <UserTable />
+
       {/* <div className="p-6">
         <h1 className="text-2xl font-bold mb-4">Users</h1>
         <table className="table-auto border-collapse border border-gray-300 w-full">

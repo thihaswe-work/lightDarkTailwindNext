@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 interface User {
   id: number;
@@ -8,27 +8,31 @@ interface User {
   lastName: string;
 }
 
-export default function UserTable() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
+export default async function UserTable() {
+  const res = await fetch("https://dummyjson.com/users", { cache: "no-store" });
+  const data = await res.json();
+  const users: any[] = data.users;
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await fetch("https://dummyjson.com/users");
-        const data = await res.json();
-        setUsers(data.users);
-      } catch (err) {
-        console.error("Error fetching users:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // const [users, setUsers] = useState<User[]>([]);
+  // const [loading, setLoading] = useState(true);
 
-    fetchUsers();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const res = await fetch("https://dummyjson.com/users");
+  //       const data = await res.json();
+  //       setUsers(data.users);
+  //     } catch (err) {
+  //       console.error("Error fetching users:", err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-  if (loading) return <p className="p-6">Loading users...</p>;
+  //   fetchUsers();
+  // }, []);
+
+  // if (loading) return <p className="p-6">Loading users...</p>;
 
   return (
     <div className="p-6">
